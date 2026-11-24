@@ -1,34 +1,36 @@
 # Burgmann R-Bau – moderne statische Website
 
-Statische One-Pager-Neuauflage der ehemaligen Webseite `www.burgmann.or.at`
+Statische Neuauflage der ehemaligen Webseite `www.burgmann.or.at`
 (Burgmann R-BaugesmbH, Wiesen). Reines HTML/CSS/JS – kein Build-Schritt, keine
-Abhängigkeiten, funktioniert komplett offline.
+externen Abhängigkeiten, funktioniert komplett offline.
+
+## Seiten
+
+- `index.html` – One-Pager: Hero, Über uns, Leistungen (Planung/Ausführung/Koordination), Einblicke, Kontakt (mit `mailto:`-Formular)
+- `musterhaeuser.html` – Musterhäuser (Haus I Pultdach/Satteldach, Haus II Pultdach/Single) mit Bildergalerien
+- `referenzen.html` – Referenzen in 6 Kategorien mit Projektfotos
+- `partner.html` – Partner-Links
+- `impressum.html`, `datenschutz.html` – rechtliche Seiten (inkl. PDF-Download der Datenschutzerklärung)
 
 ## Struktur
 
 ```
-burgmann-site/
-├── index.html            # Startseite (Über uns, Leistungen, Region, Kontakt)
-├── impressum.html        # Impressum
-├── datenschutz.html      # Datenschutzerklärung
+├── index.html
+├── musterhaeuser.html
+├── referenzen.html
+├── partner.html
+├── impressum.html
+├── datenschutz.html
 └── assets/
-    ├── css/style.css     # modernes, responsives Design
-    ├── js/main.js        # Mobile-Navigation, Scroll-Spy, Reveal-Animationen
-    └── img/              # Platz für eigene Bilder/Logos
+    ├── css/style.css
+    ├── js/main.js
+    ├── img/            # Originalfotos/-logo (aus dem Web-Archiv der alten Seite)
+    └── files/datenschutzerklaerung.pdf
 ```
 
 ## Lokal ansehen
 
-Variante 1 – direkt öffnen:
-
 ```
-index.html im Browser öffnen
-```
-
-Variante 2 – lokaler Server (empfohlen, für korrekte Link-Auflösung):
-
-```
-cd burgmann-site
 python3 -m http.server 8000
 # dann http://localhost:8000 aufrufen
 ```
@@ -36,13 +38,13 @@ python3 -m http.server 8000
 ## Deployment
 
 Alle Dateien auf einen beliebigen statischen Hoster kopieren
-(z. B. Netlify, GitHub Pages, Cloudflare Pages, oder klassischer Webspace):
-`index.html` muss im Wurzelverzeichnis liegen.
+(z. B. GitHub Pages, Netlify, Cloudflare Pages): `index.html` muss im
+Wurzelverzeichnis liegen.
 
 ## Hinweise
 
-- Die Bilder-Galerien der Originalseite (Musterhäuser, Referenzen, Partner-Logos)
-  sind nicht enthalten, da die Originalbilder nicht mehr verfügbar waren.
-  Eigene Bilder können in `assets/img/` abgelegt und in den HTML-Dateien
-  verlinkt werden.
+- Inhalte und Bilder der alten Seite wurden aus der Wayback Machine
+  (web.archive.org) rekonstruiert, da die Live-Seite automatisierte Zugriffe
+  blockiert. Die Partner-Logos (logo1/4/6.jpg) waren nicht archiviert und sind
+  daher als Text-Link-Karten umgesetzt.
 - Das Kontaktformular nutzt `mailto:` und benötigt keinen Backend-Server.
